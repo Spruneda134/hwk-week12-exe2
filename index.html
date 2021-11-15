@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Temperature Converter</title>
+
+    <meta name="viewport"
+
+          content="width=device-width, initial-scale=1">
+
+  </head>
+
+<style>
+body {
+background: linear-gradient(to left, yellow 0%, darkblue 100%);
+color: white;
+}
+
+.tableclass {
+border: solid lightblue 5px;
+}
+
+img {
+width: 350px;
+height: auto;
+border-radius: 50px;
+}
+
+a:link, a:visited {
+font-weight: bold;
+text-decoration: none;
+color: white;
+}
+
+</style>
+
+  <body>
+
+<table class="tableclass">
+<tr><td>
+<form name="theform">
+<table>
+<tr><td>
+<h1>Temperature Converter</h1>
+<p><strong>Calculate farenheit to celcius: ex. (68°F - 32) x 5/9 = 20°C
+<br>Calculate celcius to farenheit: ex. (20°C * 1.8) + 32 = 68°F</strong></p>
+</td>
+</tr>
+<tr>
+<td rowspan="6"><img src="forest.jpg" alt="picture of a forest"></td>
+<td style="float: right"><strong>Enter temperature value in farenheit:</strong></td>
+<td><input name="celciusFmInput" size="10"></td>
+</tr>
+
+
+<tr>
+<td style="float: right"><strong>Celcius:</strong></td>
+<td style="background-color: white; color: black" id="celciusAnswerFmOutput"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+	<input type="button" name="calc" value="Calculate" onclick="calculate();">
+	<input type="button" name="clear" value="Clear" onclick="clearinfo();">
+</tr>
+
+
+<tr>
+<td style="float: right"><strong><hr>Enter temperature value in celcius:</strong></td>
+<td><input name="farenFmInput" size="10"></td>
+</tr>
+
+
+<tr>
+<td style="float: right"><strong>Farenheit:</strong></td>
+<td style="background-color: white; color: black" id="farenAnswerFmOutput"></td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+	<input type="button" name="calcc" value="Calculate" onclick="calculater();">
+	<input type="button" name="clearr" value="Clear" onclick="clearinfoo();">
+</tr>
+
+</table>
+</form>
+</td></tr></table>
+
+
+<script>
+document.theform.celciusFmInput.focus();
+
+function calculate(){
+
+var celcius;
+
+var celciusAnswer;
+
+celcius = parseFloat(document.theform.celciusFmInput.value);
+
+celciusAnswer = parseFloat((celcius - 32) * 5/9);
+
+
+document.getElementById("celciusAnswerFmOutput").innerHTML = celciusAnswer.toFixed(2) + "°C";
+}
+
+function clearinfo(){
+document.theform.celciusFmInput.value = " ";
+
+
+document.getElementById("celciusAnswerFmOutput").innerHTML = " ";
+
+
+document.theform.celciusFmInput.focus();
+}
+
+
+document.theform.celciusFmInput.focus();
+
+function calculater(){
+
+var faren;
+
+var farenAnswer;
+
+faren = parseFloat(document.theform.farenFmInput.value);
+
+farenAnswer = parseFloat((faren * 1.8) + 32);
+
+document.getElementById("farenAnswerFmOutput").innerHTML = farenAnswer.toFixed(2) + "°F";
+}
+
+function clearinfoo(){
+document.theform.farenFmInput.value = " ";
+
+
+document.getElementById("farenAnswerFmOutput").innerHTML = " ";
+
+
+document.theform.farenFmInput.focus();
+}
+
+</script>
+
+<br> <a href="http://csnet.southtexascollege.edu/localuser/spruned5/index.html">Go Back to HomePage</a>
+	<p><strong>Salvador Pruneda</strong></p> 
+  </body>
+
+</html>
